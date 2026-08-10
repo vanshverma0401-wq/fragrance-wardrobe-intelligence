@@ -12,7 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def package_files() -> list[Path]:
-    return sorted(path for path in ROOT.rglob("*") if path.is_file())
+    return sorted(
+        path
+        for path in ROOT.rglob("*")
+        if path.is_file() and ".git" not in path.parts
+    )
 
 
 class PublicationSafetyTests(unittest.TestCase):
