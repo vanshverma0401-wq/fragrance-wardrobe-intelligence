@@ -1,0 +1,19 @@
+wear_id,worn_on,fragrance_id,season,occasion,sprays,performance_rating,satisfaction_rating
+demo-wear-001,2026-05-22,demo-glacier-current,spring,office,4,8.0,8.5
+demo-wear-002,2026-05-30,demo-rain-library,spring,creative work,3,7.5,8.0
+demo-wear-003,2026-06-06,demo-citrus-circuit,summer,daily,5,7.0,8.0
+demo-wear-004,2026-06-12,demo-mineral-drift,summer,casual,4,7.5,8.0
+demo-wear-005,2026-06-18,demo-glacier-current,summer,office,4,8.0,9.0
+demo-wear-006,2026-06-24,demo-fig-transit,summer,travel,3,8.0,8.5
+demo-wear-007,2026-07-01,demo-citrus-circuit,summer,warm weather,5,7.0,7.5
+demo-wear-008,2026-07-06,demo-mineral-drift,summer,daily,4,7.5,8.0
+demo-wear-009,2026-07-12,demo-glacier-current,summer,casual,3,8.0,8.5
+demo-wear-010,2026-07-18,demo-rain-library,summer,office,3,7.0,7.5
+demo-wear-011,2026-07-23,demo-saffron-trail,summer,evening,2,8.5,8.0
+demo-wear-012,2026-07-27,demo-fig-transit,summer,creative work,3,8.0,9.0
+demo-wear-013,2026-08-01,demo-citrus-circuit,summer,daily,5,7.0,8.0
+demo-wear-014,2026-08-03,demo-mineral-drift,summer,travel,4,7.5,8.5
+demo-wear-015,2026-08-05,demo-glacier-current,summer,office,4,8.0,9.0
+demo-wear-016,2026-08-06,demo-fig-transit,summer,office,3,8.0,8.5
+demo-wear-017,2026-08-08,demo-ember-veil,summer,date night,2,9.0,9.0
+demo-wear-018,2026-08-09,demo-mineral-drift,summer,casual,4,7.5,8.0

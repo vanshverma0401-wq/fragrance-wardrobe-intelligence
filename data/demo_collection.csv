@@ -1,0 +1,9 @@
+fragrance_id,house,name,family,notes,seasons,occasions,price_usd,bottle_ml,personal_rating,longevity_hours,projection
+demo-glacier-current,Northstar Atelier,Glacier Current,fresh aromatic,"bergamot;juniper;cedar;musk","spring;summer","daily;office;casual",118,100,8.6,7.0,3
+demo-ember-veil,Ember and Vale,Ember Veil,amber vanilla,"amber;vanilla;benzoin;tonka","fall;winter","evening;date night;special occasion",145,75,9.0,10.0,4
+demo-rain-library,Cedar Circuit,Rain Library,woody aquatic,"cedar;rain accord;violet leaf;musk","spring;fall","office;creative work;casual",96,50,8.2,6.5,2
+demo-citrus-circuit,Solstice Form,Citrus Circuit,citrus aromatic,"grapefruit;lemon;neroli;vetiver","spring;summer","daily;office;warm weather",82,100,7.9,5.0,2
+demo-velvet-signal,Nocturne Works,Velvet Signal,floral musk,"iris;rose;ambrette;white musk","spring;fall","evening;formal;special occasion",132,75,8.4,8.0,3
+demo-saffron-trail,Saffron Relay,Saffron Trail,spicy leather,"saffron;cardamom;suede;cedar","fall;winter","evening;date night;formal",156,100,8.8,9.0,4
+demo-mineral-drift,Coastal Metric,Mineral Drift,marine woody,"sea salt;mineral accord;sage;driftwood","spring;summer","daily;travel;casual",104,100,8.1,6.0,3
+demo-fig-transit,Orchard Signal,Fig Transit,green fruity,"fig leaf;black tea;cedar;vetiver","spring;fall","office;creative work;travel",124,75,8.7,7.5,3
