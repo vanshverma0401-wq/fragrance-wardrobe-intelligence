@@ -9,6 +9,30 @@ service or a scraped commercial fragrance database.
 No cloud account is required. The verified MVP runs with Python's standard
 library and the files in this repository.
 
+[Read the data model](DATA_MODEL.md) · [Explore the Python implementation](src/fragrance_intelligence/) · [Run the demo](#run-it-locally)
+
+<a id="demo-snapshot"></a>
+
+![Fragrance Wardrobe Intelligence synthetic demo summary](assets/wardrobe-intelligence-summary.png)
+
+The snapshot is generated from the same public CSV inputs and tested analytical
+functions as the CLI. It compares purchase cost per logged wear across the seven
+worn fictional items, summarizes declared seasonal coverage, and calls out the
+unworn item without converting its missing ratio to zero.
+
+<a id="what-this-demonstrates"></a>
+
+## Skills demonstrated
+
+| Skill | Evidence in this project |
+| --- | --- |
+| **Python and modular software design** | Typed data classes and separate [inventory](src/fragrance_intelligence/inventory.py), [wear-log](src/fragrance_intelligence/wear_log.py), analytics and recommender modules. |
+| **Data modeling and data quality** | A two-table [data contract](DATA_MODEL.md), unique identifiers, input validation and referential integrity between collection items and wear events. |
+| **Descriptive analytics and metric design** | [Rotation, coverage, recency and cost-per-logged-wear calculations](src/fragrance_intelligence/analytics.py), including explicit handling of unworn items. |
+| **Explainable recommendation logic** | [Weighted profile similarity](src/fragrance_intelligence/recommender.py) with Jaccard overlap, component scores and reasons; this is a heuristic, not a trained machine-learning model. |
+| **CLI development and JSON reporting** | [argparse commands](src/fragrance_intelligence/cli.py) produce deterministic structured output for a chosen analysis date. |
+| **Unit and integration testing** | [unittest suite](tests/) covers validation, analytics, recommendation ranking and CLI behavior using synthetic data. |
+
 ## Why this project
 
 A fragrance collection is easy to inventory but harder to use intentionally.
@@ -34,15 +58,6 @@ black-box shopping recommendation.
   threshold;
 - ranks similar fragrances already in the wardrobe with an explainable heuristic;
 - emits deterministic JSON suitable for a later dashboard or analytics model.
-
-## Demo snapshot
-
-![Fragrance Wardrobe Intelligence synthetic demo summary](assets/wardrobe-intelligence-summary.png)
-
-The snapshot is generated from the same public CSV inputs and tested analytical
-functions as the CLI. It compares purchase cost per logged wear across the seven
-worn fictional items, summarizes declared seasonal coverage, and calls out the
-unworn item without converting its missing ratio to zero.
 
 ## Public data boundary
 
@@ -112,16 +127,6 @@ DATA_MODEL.md                 Field definitions and relationships
 DATA_AND_USAGE.md             Provenance, ownership, and safe-use rules
 METHODS_AND_LIMITATIONS.md     Metric definitions and honest limitations
 ```
-
-## What this demonstrates
-
-- a clear, validated tabular data contract;
-- referential integrity between collection and event data;
-- deterministic Python analytics with no hidden service dependency;
-- an inspectable recommendation method instead of an unsupported ML claim;
-- privacy and data-rights boundaries designed into the public package;
-- a clean foundation for a future DuckDB/dbt analytics layer and visual
-  application.
 
 ## Current status
 
