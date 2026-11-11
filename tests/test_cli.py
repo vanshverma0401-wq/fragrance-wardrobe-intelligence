@@ -78,6 +78,19 @@ class CommandLineTests(unittest.TestCase):
         self.assertEqual(payload["recommendations"][0]["fragrance_id"], "amber-02")
         self.assertTrue(payload["recommendations"][0]["reasons"])
 
+    def test_saved_public_summary_matches_actual_demo_command(self) -> None:
+        root = Path(__file__).resolve().parents[1]
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            exit_code = main([
+                "summary", "--collection", str(root / "data/demo_collection.csv"),
+                "--wear-log", str(root / "data/demo_wear_log.csv"),
+                "--as-of", "2026-08-10", "--neglect-days", "30",
+            ])
+        saved = json.loads((root / "examples/demo-summary.json").read_text(encoding="utf-8"))
+        self.assertEqual(exit_code, 0)
+        self.assertEqual(json.loads(output.getvalue()), saved)
+
 
 if __name__ == "__main__":
     unittest.main()

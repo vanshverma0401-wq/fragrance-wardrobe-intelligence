@@ -9,7 +9,7 @@ service or a scraped commercial fragrance database.
 No cloud account is required. The verified MVP runs with Python's standard
 library and the files in this repository.
 
-[Read the data model](DATA_MODEL.md) · [Explore the Python implementation](src/fragrance_intelligence/) · [Run the demo](#run-it-locally)
+[Read the data model](DATA_MODEL.md) · [Explore the Python implementation](src/fragrance_intelligence/cli.py) · [Run the demo](#run-it-locally)
 
 <a id="demo-snapshot"></a>
 
@@ -31,7 +31,7 @@ unworn item without converting its missing ratio to zero.
 | **Descriptive analytics and metric design** | [Rotation, coverage, recency and cost-per-logged-wear calculations](src/fragrance_intelligence/analytics.py), including explicit handling of unworn items. |
 | **Explainable recommendation logic** | [Weighted profile similarity](src/fragrance_intelligence/recommender.py) with Jaccard overlap, component scores and reasons; this is a heuristic, not a trained machine-learning model. |
 | **CLI development and JSON reporting** | [argparse commands](src/fragrance_intelligence/cli.py) produce deterministic structured output for a chosen analysis date. |
-| **Unit and integration testing** | [unittest suite](tests/) covers validation, analytics, recommendation ranking and CLI behavior using synthetic data. |
+| **Unit and integration testing** | [unittest suite](tests/test_analytics.py) covers validation, analytics, recommendation ranking and CLI behavior using synthetic data. |
 
 ## Why this project
 
@@ -81,6 +81,28 @@ PYTHONPATH=src python3 -m fragrance_intelligence.cli summary \
   --neglect-days 30
 ```
 
+The summary command above was rerun with CPython **3.12.14** in November 2026.
+Selected fields from its actual fictional-data output are:
+
+```json
+{
+  "analysis_as_of": "2026-08-10",
+  "collection_size": 8,
+  "wear_log_entries": 18,
+  "rotation": {
+    "collection_size": 8,
+    "rotation_rate": 0.875,
+    "unworn_unique": 1,
+    "worn_unique": 7
+  }
+}
+```
+
+The [complete saved example](examples/demo-summary.json) also includes cost per
+logged wear, coverage and the unworn item. Its unworn cost ratio is `null`, not
+zero. These are demonstration outputs for the stated historical analysis date,
+not measurements of a real person's collection.
+
 Find the closest profiles already in the demo wardrobe:
 
 ```bash
@@ -95,6 +117,10 @@ Run all tests:
 ```bash
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src python3 -m unittest discover -s tests -v
 ```
+
+The [CI workflow](.github/workflows/checks.yml) runs these standard-library
+checks with Python 3.12. It does not run the optional visual renderer or a hosted
+service. Refer to the actual Actions run for its current outcome.
 
 Rebuild the optional static visual with Python 3.9+ and Pillow:
 

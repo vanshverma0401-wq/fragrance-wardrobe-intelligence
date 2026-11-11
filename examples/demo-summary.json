@@ -1,0 +1,59 @@
+{
+  "analysis_as_of": "2026-08-10",
+  "collection_size": 8,
+  "cost_per_logged_wear": {
+    "demo-citrus-circuit": 27.33,
+    "demo-ember-veil": 145.0,
+    "demo-fig-transit": 41.33,
+    "demo-glacier-current": 29.5,
+    "demo-mineral-drift": 26.0,
+    "demo-rain-library": 48.0,
+    "demo-saffron-trail": 156.0,
+    "demo-velvet-signal": null
+  },
+  "coverage": {
+    "families": {
+      "amber vanilla": 1,
+      "citrus aromatic": 1,
+      "floral musk": 1,
+      "fresh aromatic": 1,
+      "green fruity": 1,
+      "marine woody": 1,
+      "spicy leather": 1,
+      "woody aquatic": 1
+    },
+    "occasions": {
+      "casual": 3,
+      "creative work": 2,
+      "daily": 3,
+      "date night": 2,
+      "evening": 3,
+      "formal": 2,
+      "office": 4,
+      "special occasion": 2,
+      "travel": 2,
+      "warm weather": 1
+    },
+    "seasons": {
+      "fall": 5,
+      "spring": 6,
+      "summer": 3,
+      "winter": 2
+    }
+  },
+  "neglected": [
+    {
+      "days_since_worn": null,
+      "fragrance_id": "demo-velvet-signal",
+      "last_worn": null,
+      "reason": "no logged wears"
+    }
+  ],
+  "rotation": {
+    "collection_size": 8,
+    "rotation_rate": 0.875,
+    "unworn_unique": 1,
+    "worn_unique": 7
+  },
+  "wear_log_entries": 18
+}
